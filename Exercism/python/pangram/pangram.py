@@ -1,7 +1,6 @@
 def is_pangram(sentence):
-    letters = {}
-    # "zaz\sd".
+    letters = dict()
     for c in sentence.lower():
-        if letters[c] is None:
+        if c not in letters and c is not None and c.isalpha():
             letters[c] = 1
-    return True if len(letters.keys()) == 26 else False
+    return True if len(letters) == 26 else False
